@@ -7,9 +7,12 @@ module.exports = {
     const userSubscription = {
       plan_id: plan.plan_id,
       start_date: moment(start_date).format("YYYY-MM-DD hh:mm:ss"),
-      valid_till: moment(start_date)
-        .add(plan.validity, "d")
-        .format("YYYY-MM-DD hh:mm:ss"),
+      valid_till:
+        plan.plan_id === "FREE"
+          ? moment(plan.validity).format("YYYY-MM-DD hh:mm:ss")
+          : moment(start_date)
+              .add(plan.validity, "d")
+              .format("YYYY-MM-DD hh:mm:ss"),
     };
     const userIndex = users.findIndex((user) => user.user_name == user_name);
     users[userIndex] = {

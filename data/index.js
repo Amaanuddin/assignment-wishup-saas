@@ -1,3 +1,4 @@
+const INFINITY = 8.64e15;
 module.exports = {
   users: [
     {
@@ -9,7 +10,7 @@ module.exports = {
   subscriptions: [
     {
       plan_id: "FREE",
-      validity: "-1",
+      validity: INFINITY,
       price: 0.0,
     },
     {
