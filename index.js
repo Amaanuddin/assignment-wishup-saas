@@ -75,7 +75,9 @@ app.get("/subscription/:username/:date?", (req, res) => {
       .map((sub) => {
         return {
           plan_id: sub.plan_id,
-          days_left: moment(sub.valid_till).fromNow(),
+          days_left: moment
+            .duration({ from: req.params.date, to: sub.valid_till })
+            .asDays(),
         };
       });
     res.status(200).send(activeSubscription);
