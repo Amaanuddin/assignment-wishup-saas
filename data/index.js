@@ -1,7 +1,6 @@
-module.exports.data = {
+module.exports = {
   users: [
     {
-      user_id: 1,
       user_name: "amaan",
       created_at: "2021-12-11 09:07:20",
     },

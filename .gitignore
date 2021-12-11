@@ -1,5 +1,8 @@
 # package directories
 node_modules
 
+#vscode config
+launch.json
+
 
 
